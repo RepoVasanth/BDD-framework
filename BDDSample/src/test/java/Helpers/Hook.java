@@ -22,7 +22,7 @@ public class Hook {
 	
 //	@Before
 //	public void setup() {
-//		System.setProperty("webdriver.chrome.driver","C:\\Vas_Automation\\chromedriverV125\\chromedriver.exe");
+//		System.setProperty("webdriver.chrome.driver","<<your chrome driver path>>\\chromedriver.exe");
 //		driver=new ChromeDriver();  
 //		driver.manage().window().maximize();
 //	}
@@ -38,7 +38,6 @@ public class Hook {
 		try {
 			return driver;
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return driver;
@@ -63,8 +62,7 @@ public class Hook {
 				driver=new FirefoxDriver();
 				break;
 			case "CHROME":
-//				System.setProperty(CHROME_DRIVER_PROPERTY, FileReaderManager.getInstance().getConfigReader().getDriverPath());
-				System.setProperty("webdriver.chrome.driver","C:\\Vas_Automation\\chromedriverV125\\chromedriver.exe");
+				System.setProperty("webdriver.chrome.driver","<<your chrome driver path>>\\chromedriver.exe");
 				driver=new ChromeDriver();
 				break;
 			case "INTERNETEXPLORER":
@@ -73,7 +71,6 @@ public class Hook {
 		}
 		//if(FileReaderManager.getInstance().getConfigReader().getBrowserWindowSize()) 
 		driver.manage().window().maximize();
-//		driver.manage().timeouts().implicitlyWait(FileReaderManager.getInstance().getConfigReader().getImplicitlyWait() , TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(10 , TimeUnit.SECONDS);
 		driver.manage().deleteAllCookies();
 		return driver;
